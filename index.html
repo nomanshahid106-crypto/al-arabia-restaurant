@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al-Arabia Restaurant — Rahim Yar Khan | Sample Website Prototype</title>
+<meta name="description" content="Sample website prototype for Al-Arabia Restaurant, By Pass Road, Rahim Yar Khan. Mandi platters, BBQ, Karahi, buffet and catering. Call 0335 7221111.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C62027;--red-dark:#8F141B;--black:#181818;--coal:#232323;--cream:#FFF9F3;--sand:#F3E7D3;--line:#EAD9C2;--muted:#7A6A5C;--gold:#C99B3F}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,Arial,sans-serif;background:var(--cream);color:#2B2320;line-height:1.65}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--black);line-height:1.15}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--black);color:#F0D9B5;font-size:13.5px;padding:8px 0}
+.topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.topbar a{color:#fff;font-weight:600}
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,249,243,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:56px;width:auto}
+.brand .nm{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--red-dark);line-height:1}
+.brand .tg{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:3px}
+nav.links{display:flex;gap:4px;align-items:center}
+nav.links a{padding:9px 13px;border-radius:99px;font-weight:600;font-size:14.5px}
+nav.links a:hover{background:#FBEAEA}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:99px;font-size:15.5px;box-shadow:0 8px 20px rgba(198,32,39,.32);transition:.2s}
+.btn:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn.wa{background:#1FA855;box-shadow:0 8px 20px rgba(31,168,85,.3)}
+.btn.ghost{background:transparent;color:var(--black);border:2px solid var(--black);box-shadow:none}
+.hero{background:radial-gradient(1000px 460px at 88% -10%,#F6C9A0 0%,transparent 55%),linear-gradient(180deg,#FFF3E2,var(--cream));padding:58px 0 50px}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.kicker{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:99px}
+.hero h1{font-size:clamp(36px,5.2vw,58px);margin:16px 0 12px}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero p.lead{font-size:18px;color:#4A3F36;max-width:33rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 18px}
+.ratingbar{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:14.5px}
+.ratingbar b{color:var(--black)}
+.stars{color:var(--gold);letter-spacing:2px}
+.hero-card{background:var(--black);border-radius:24px;padding:30px 28px;color:#EDE3D2;box-shadow:0 18px 40px rgba(27,20,8,.16);transform:rotate(1.2deg)}
+.hero-card .logo-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.hero-card img{height:64px;background:#fff;border-radius:12px;padding:6px}
+.hero-card h3{color:#fff;font-size:24px}
+.hero-card ul{list-style:none;margin-top:8px}
+.hero-card li{padding:9px 0;border-bottom:1px dashed #454545;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.hero-card li:last-child{border:0}
+.hero-card .pr{color:#FFB3B7;font-family:'Fraunces',serif;font-weight:700;white-space:nowrap}
+section{padding:58px 0}
+.alt{background:var(--sand)}
+.sec-head{max-width:42rem;margin-bottom:30px}
+.sec-head.center{margin:0 auto 30px;text-align:center}
+.eyebrow{color:var(--red);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:12.5px}
+.sec-head h2{font-size:clamp(27px,3.4vw,38px);margin:9px 0 8px}
+.sec-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 20px;box-shadow:0 6px 16px rgba(27,20,8,.05)}
+.card .ic{width:50px;height:50px;border-radius:14px;background:#FBEAEA;display:grid;place-items:center;font-size:25px;margin-bottom:12px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14.5px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 44px}
+.mitem{padding:12px 2px;border-bottom:1px dashed var(--line)}
+.mitem .row{display:flex;align-items:baseline;gap:10px}
+.mitem .nm{font-weight:700;color:var(--black);font-size:16px}
+.mitem .dots{flex:1;border-bottom:2px dotted #D8BE96;transform:translateY(-4px)}
+.mitem .pr{font-family:'Fraunces',serif;font-weight:700;color:var(--red);white-space:nowrap}
+.mitem .ds{color:var(--muted);font-size:13.5px}
+.mitem .serves{display:inline-block;background:#FBEAEA;color:var(--red-dark);font-size:11px;font-weight:800;padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.note{background:var(--black);color:#F0D9B5;text-align:center;border-radius:14px;padding:14px 18px;font-weight:600;margin-top:26px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 6px 16px rgba(27,20,8,.05)}
+.panel h3{font-size:22px;margin-bottom:10px}
+.kv{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.kv:last-child{border:0}
+.kv .k{min-width:104px;font-weight:700;color:var(--black)}
+.kv a{color:var(--red);font-weight:600}
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.sw{width:86px;text-align:center;font-size:11.5px;color:var(--muted)}
+.sw i{display:block;height:44px;border-radius:10px;border:1px solid var(--line);margin-bottom:5px}
+footer{background:var(--black);color:#CFC0AB;padding:46px 0 24px}
+footer h4{color:#fff;font-family:'Fraunces',serif;margin-bottom:10px}
+footer a{color:#FFB3B7}
+footer .fine{border-top:1px solid #333;margin-top:28px;padding-top:16px;font-size:12.5px;color:#8D8271}
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:60;background:#1FA855;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 12px 26px rgba(31,168,85,.4)}
+@media(max-width:900px){.hero .grid,.mgrid,.visit{grid-template-columns:1fr}.brand .tg{display:none}nav.links a{padding:8px 9px;font-size:13.5px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>📍 Near Attock Petroleum, By Pass Road, Rahim Yar Khan</span>
+  <span>📞 <a href="tel:+923357221111">0335 7221111</a></span>
+</div></div>
+
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="#">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABnCAMAAAD8OnauAAADAFBMVEVHcEzz8PDnxcX39fX38fPy7e769vb////8+Pj39fXqz9Diu7zv2trgxcbmurvxckz0dU7u1NXp1tfu19japKbYk5fJQUfks7XTeHvLX2TmurzwcUv4+PgNDQ3MVlvcoaPanaAYGBjZmp3lysvmv7/anaDlv8DCa23grKzhr7Hu3t4PDw/MdnjYuLrEY2exMTTjtbbQcHTeqazNXmPLWF3GW2DVhonszc2bnZ3QbnLZm57YiY3KqKq2OTu9VVfZoqTLam4qKyvfpafw6+vNi43ZlpnbpKXUhorYjZHJjI2+V1voxcYnJye2UFP8+fnHTFIYGBjXj5LcmJzYmJvXio7gq63RfYBeXl6BgoEWFhYeHh7OcXb49fXZkJLYm57v4uLfqay7YWTVgobRd3vNf4Lfpajnv8DCP0XLUlf36+zAOD14d3fblpjTgYV/f3/fpqn9+fqGhobVf4PTeX1ERETgpaTZlpfbn6DFRUtYWFjgqqxJSUnPb3LNe37SiozPi44zNDTOj5IRERG/VFdvb3DMaGvTg4fQh4ngqquHh4jbmZzLg4ZhYWJbW1wdHR3w3t5SUlK2trbMkpQzMzO3QUTFZWjWi4/LZ2zktLbdmJu5UFXEbnHTdnorKyzEcXO8am43NzdeXl5HR0ZoaWjQf4TJgYNKSkrbs7PHjo/KgYO+LDO2tbTPd3uqMTXSmpvXmZlhYWHsz9BRUVHMf4K4uLgaGhrCwcHCWl3nxcbEd3ucnZ7qmYNubm5CQkKAgICYmJfv19eAgICzs7Ppv8FaWlrSTDzjwMGyOz+wNzvEZWjetLfr4uKhoKF3d3fpaUncoKLHtLTUZFXpycmKiop1dXXftrd9fH3Hx8eSkpSBgYDDGiLFHCTDFx7DHybGICexIiXBGCDBFRzGJCvJSE7JNDutHiLGMDbMTlO6GR/OZ2vDKC+uGh3IKTDJO0KyHSC6EhmqJSuwFxq+HyW6MC23KivtbEq5SEzbVz/mYkSyKCzBNDSnFBm9Jy2sPULfYEnORTVGftuTAAAA2nRSTlMAEjQVCAsOAQUCLCwkFj/+/j4eNjvB/lf970j+HP7+cFr6tFNOQl78k1BF9vcj/v59/Un99f7FRzDoZOge//PR+fjkKnSI+PvZ/eZ/4/w/+dGbU87Ntv5EYN753iP6foOl+eTSzX9v/vpX/nCq3EKILxb06vPALp34mmGx8vOD8urH6/4q7dNT/IToklhn7W2qVq7W/d2wymv20pPEwNbstMPEj6f84/zfwfWRtvzd9tScM2c4w4K8kudN+quJl0LLzneo9P714vay5K5i3/6SaP7Gu8HF5fWX6qu8FPsAAAzrSURBVGje7JlpSBv5G8fHxGRiEqMxHomKBq+oeGsUtR54W1Hx6htv602lRbFK8aBIrdgXgmj/vdA3LT3oQemLbdk3hbLdtgtbduH/ZpKZTCaJJvFIjPVuu//fJLEmpWubxcEX//2BoJM4nzzX93meCQT9e/49/57/j+PCgI8H7BHmfDxgdjj9eDztWlXicjwmtxUGHw/4xHgL93jICdKKY3L27UvRxwP2jUk7Fi43XJrawPvK2wyaOG8kL43Goq6egrMmpVKdNN8W4XRhrjQjNjY2o3SaTREX9ng8+i47MGx208bdvNYMxZufbj579vbNzmkPisjObbOp+TAUsTnntH/Jp1nz6KYng54CsTxvxOZT5usTJ4BvwySl16zODsvc+/Uy8IXnHHgh9NGsE3XpxRmZa441Nk/TyD9Cmvd+DSV/uZzpCUHiR/NU+RpiNWSur67tzGfGzgsgSPBi79Fl8/XQzfvtcSeN96gCwxdm1gD3LY32k/Eqg3nRqLlpTe37M2MzxtLHVHUvVoViTfHmJohkg/FFWcnm3g3X/VZ95cbs4+J7rpRF+D83bpJBpZ00vvtteM+Y98UXsKtrV/FFigYFZw+IwSAdG3jS2Fx899PeSbuYBhdPU2QvrTWN68HxzJv79ElS+qlZo7hi93JccQNFVSyYL51/MV8KsHdKNUbj0htPuwQIKhZTwmXyp14WNzdL7hQXSx7taTSa1RtM29dde0Y5lPi5/2dwTkVJmksz1v/aBeCdPLs38KIuUiFccPgfQ/XCz9vbW1tb2xvuv3/QLMWG2r0j/NQAJZ4OGX39burMHxvulvMLsNgut5jjdy5QAnYKutfEYFR89nN383Nzc/99XbM0U2lb4lH3KJqKnKKBPHBTt90A2M/N/ReFYvUkz0ZN46epGkFgcnPK3wJY0uTtDyCvZ79Mu/AZYR6lUxcvYJt0tZ/7xrpGsbRzn7Hvj55hT0rBnEtbFotJsGIpI9B6PTrqy2egKNK1f/m5WV2tAOT9oYOTfYXaAde5Vb3h7ufnTiYXCR6zblOeMdSGGIJvf9xyd3N3/2w2WKGJyrL04FDJZYpn+pEP6583NrbWzdylzSeSBKvFzygGp2WsftjdVWgUO2RuFcRkWmo5+tIctVkNcTLXVs3hVawubU4UG1stcxYcOCaZzhNHJPiGhKSkpPD5gjr60S6WLu9nllbJsxQb9fqOpjTMGnuXwFppDDgSSfwpcAoLR4u8Btp8eJwjq7LcrKgZsCqN3bl7N0ajeVx30JB54vzpiz19w1HZkpgYqTQAnERdVPXZiKPZ5qPvPSkoKLh7t0ASu7S2c/+rHuxM57JpNBoPnISEyrSR26dFUl1vE+8IdBxOy5zZHBubUaytfci8ctCRWNwDp8LmH7O4M0545t2KyfbyPQq9fpi5vra2mjE7YjPrsOJavMKYfzOPn78ikrw/gmmfxb8fm/lQbDfcMqsIYjGI+bfFcDummvaPWBwOxwbEDOV8FTV6EYoYVAm2Twrsxnu4cqjln2zuEUmDnakXDnmW6d+Corh3hI2Nt24F2vkkdLjK8WkQHliWI7Jbh6wo7CEcxRdtwA0LiLrVjhRx6qzDYIYXgWHYLdZhEwIJDjm4UEEgyk575w44Pnn79wAucfWwB1GLCCq3AcMjy3K5yE46YM5ou8PPmVIRTLZcccg7LnjLMFsw2CwfPKiwjw0zq99RIaEl4iiiJuccOpv7rZqB29QyFA8IsQ3P+fNfYVzCqxxVbl8VAK+Apcypf6gv6Fv798Ayhip1KYffJq6K6SA4UI1YioWdpJSrvtF5WV7LGIYLIw+/TYnDFlcsgypdBHpLK5fbRfJL+IoIDMULAZh1SBt+nuXgMwPmaRSAE1NIMIKpq30OdJfJZpNW0NNB2iP1kVDI1TM+ZGhdQkPtI+LMdIFKahwcDjhJOACTEfQQyWXosne11aessOqhIbI5+LeYwV1dw3pisQ0oXJq3ujbsAJN7Nnk8qOS/zx0PMYHi8XxgSP6KDJHL1enmNHIO70RxJaIKhLh9MgxDrzfmFAbgylQuxGiVKWWiff2Ag/u6TaaPqvh2xz1NoDIhn7RR/HC2XC8nvBjkGOStROT6clE4zB6WYSg68XL0aS+iDPCFuCKgJ0n7QhWWbdJqtd0dOge/0/AZ7NYTmKxQYPn49IEFBEsGhdG+iCNIec6fTxuZNKEMkxETEzVl6YhS5WOuPyzZksNw5BDA7va+LpiIdIhLr+3uWQAhrD9nVYZkAlnIh6DgbByRiZ7mDHqncwVCFEMX6utT6tJROSj4uBUcUbdZ9bboo1bbUfOnrjvRsd29YeXtNTVGENdzLQbwA3CknAf5P9bjiGjqeYdSKWILhAgAx2cx6yZRuVrsUrOA4Cpfq151AG541yWtQe/QFwsC0SBHrEYxosBiMevMMk4AT5cE4Hhne1cUgmA9TgCMonppO5SbjiFqMT1Lj+DW3OJnAz8H5QYtmEyqCEccXb0yAonVMhlRYLGYn4jLQRT9iwhcHX6uRg1E/CzEJ8HIJTZU1wLAlbmTKI72mKvduWZXa+opm0r8aMKzHZl+3qseMiHxCiIjcuosN1oABjOglEQ5UlvWGD+oxzt9ARiIOQpSHfQxfKXy3HUTTniZe4QgSqstLylLT1SZTOn+P1JDNB5YR8pKpLPAYxHeJNj8b4J4HF8EZRG3olyJK5vU1evlfbkQP55sXyCbaEkIoorIvY7i6veWklAZTMllrxJzAgwLTd8XLlZYVqEwPv7U9UQVWfQRqn0wfE2lxMbpED2LUGZ3PdXV5KBYFd0CBgGAeCpEHsCrmzQpV65ZxKfb0NHeJexpLDeovq8fzgPDrfniyjSvjgfSIqC9vgEAPOkPMeKmmhaApaQHlajXVH1qWRW2XEOCERQBLoeByMn6uMwsvdLbXDtwvt6Q3Vij8wlWGX5AP3iFaWTxR6YPXvY5rTvjwU9EZGi6v1NTb2M/oSS7RYm3Uv38la7BOQhbeOVEBkAmTxSAGkfx5SAWFKdWrliKNl+vffJSl+zsqzIIv68foU9IleL3DYJ127Uhe7xRiMiQ3pL+3jT/fr1SKIAinwTg3i97U6Ohs8sLr5iQRy2qlPdxIX4SIl8MI0NtMOsHL7jpo3aiQBpBXvkBsGtVPxtKSR20rPk+YOskZGhnfToY2Nu9DbrGrpzJfr1etwiGIR9vogl0WZ9xkSicxQgCaloEcoF1lUCKzvHDo3J+69COqZKdgf4ZdN8Hw2yvrCbRrtf/psXHJ6IqIiX6LevVvdtvlUAlAuO0V89mdljzCbfeujUd2G7maX0AsgnYGOPiZDB4/vCOCTgmuaIfPXZyk0hSLgj58x5YzjFwBn56rkZMuSGatWq6kmijmZlZo6hS4+Pb926JQVoebFZr2hKAJYFKcjKoPGDPf/J8BjibcIjkmzx84D8D0t9gUrKs9TAAtm95XJeAezZMdq+UCLd8GAPTj6sy8wKBjQ0vLytzzpvbwOYtrAsDacAwQ9ohzDn+IWCW0U7/P+nTxdnh/VZuaEMFmnvFvSQJllxM05/NQhmMBZYLd29ZgvtCrHk9eSguZ+ODTOFylLW3i+DrHumWEWhWM8b5v9pugxrpQC/fEgPFEW+1omzUBGSbOS0sCK5M4d2lC+2w4xleMUp+smo2G0bLGliEhAD9k62oWCKrmAcLQQ5mZsFljvth4wAcQjLMzsIyPDEyQKdxcEAHZhg4Oh0PahEqL8u8srarYoZC8m1g08KIgX2C7JHrjkCLLSoXVO7nENq3cOG2EtlleQz7JyyYkMew5crl+INnt105ePBMTEQ1UAUnQ171guyCfdqO1wh1jzlUsUZFldi9ZyaqDKwLZUuOyC7j0p0c1SA72XmxouLk1ctkA/Yd8mkKCPCJmLh1UfzkyNUBsj4RnX2RAU0NFhY+2tqOhzoVtSdbEM7FWAWDXIK4ORjYNmiXOMqWMPUobjjbtMB5r+yRbf0lTeHKR7T32mxqWgSyuAFkcS+3T1O4zV7t8B7FysWKlZ1REyzIH3ADDeMwbtCuXt2gmNereHbh4jPOuguiJm8ribLQKtHexWDRNPdQwLLTIIsdt9g0OW5h6IkK742KmNg3oTNqD4UTj2wbZKszl8mG5yk6Xt7js+fQjQbtxYtkJ1zYILsoIqJp8rZIx5uKAav7HLewzJXdc2axYk9vVPbEqEWdig2dlI3xcVRG7vVb1LeJsToyMnLuxGqfyACL8K1bsyc2aPssjJzrV9mkHbVY2cfHgiEcGMML+3qyHSO2bK2eODdyrg1lY5mF4YUsLeEcDEBiEyNHy6ZNhQwMhUBs0du7KyKCmTe7MpuRMSIb2HFq6e3ZlV1osc+GtaWQo7ClhcLRPU52cM7EEyagMhUWoZwM7BwE1I+CUTAKRsEoGNwAACAS6VWbNXerAAAAAElFTkSuQmCC" alt="Al-Arabia Restaurant logo">
+    <span><span class="nm">Al-Arabia Restaurant</span><span class="tg" style="display:block">Mandi • BBQ • Buffet — RYK</span></span>
+  </a>
+  <nav class="links">
+    <a href="#menu">Menu</a><a href="#deals">Platter Deals</a><a href="#visit">Visit Us</a>
+    <a class="btn" href="tel:+923357221111">📞 Book a Table</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="wrap grid">
+  <div>
+    <span class="kicker">Arabian • Pakistani • Continental</span>
+    <h1>Where every flavour <em>tells a story</em>.</h1>
+    <p class="lead">Al-Arabia brings slow-cooked Mandi, sizzling BBQ platters and rich Karahi to By Pass Road, Rahim Yar Khan — generous family platters, a buffet spread, and catering for your gatherings, all in one place.</p>
+    <div class="cta">
+      <a class="btn" href="#menu">🍽️ Explore the Menu</a>
+      <a class="btn wa" href="https://wa.me/923357221111" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <a class="btn ghost" href="tel:+923357221111">📞 0335 7221111</a>
+    </div>
+    <div class="ratingbar"><span class="stars">★★★★★</span><span><b>4.6 rating</b> on Google (28 reviews)</span><span>•</span><span>Buffet restaurant</span><span>•</span><span>Dine-in • Delivery • Catering</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="logo-row"><img src="data:image/png;base64,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" alt="Al-Arabia logo"><h3>Signature Mandi Platters</h3></div>
+    <ul>
+      <li><span>Chicken Mandi Platter — for 2</span><span class="pr">Rs 1,649</span></li>
+      <li><span>Chicken Mandi Platter — for 4</span><span class="pr">Rs 2,999</span></li>
+      <li><span>Mutton Mandi Platter — for 2</span><span class="pr">Rs 2,399</span></li>
+      <li><span>Mutton Mandi Platter — for 4</span><span class="pr">Rs 4,499</span></li>
+      <li><span>Grand Arabian Feast — for 8</span><span class="pr">Rs 7,800</span></li>
+    </ul>
+    <p style="font-size:13px;color:#A99B87;margin-top:12px">Platter deals include soft drinks &amp; sides — best value for groups.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The Niche</span>
+    <h2>An Arabian table, Rahim Yar Khan style</h2>
+    <p>Al-Arabia is a buffet and family restaurant built around Arabian Mandi culture — big shared platters, BBQ fresh off the grill, and Pakistani favourites alongside Continental dishes. Made for family dinners, group feasts and events.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="ic">🍚</div><h3>Mandi Platters</h3><p>Chicken and mutton Mandi with fragrant rice and traditional sides, sized for 2, 4 or a full family feast.</p></div>
+    <div class="card"><div class="ic">🔥</div><h3>BBQ &amp; Grill</h3><p>Seekh kababs, tikka boti and BBQ platters — plus karahi and handi cooked to order.</p></div>
+    <div class="card"><div class="ic">🥘</div><h3>Buffet &amp; Family Dining</h3><p>A buffet restaurant setting for relaxed family dinners near Attock Petroleum, By Pass Road.</p></div>
+    <div class="card"><div class="ic">🎉</div><h3>Events &amp; Catering</h3><p>Platter deals for gatherings and city-wide catering for family and corporate events.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="menu"><div class="wrap">
+  <div class="sec-head center">
+    <span class="eyebrow">Featured Menu</span>
+    <h2>Mandi platters &amp; favourites</h2>
+    <p>From the restaurant's published menu — prices in PKR.</p>
+  </div>
+  <div class="mgrid">
+    <div class="mitem"><div class="row"><span class="nm">Chicken Mandi Platter<span class="serves">2 PERSON</span></span><span class="dots"></span><span class="pr">Rs 1,649</span></div><p class="ds">Slow-cooked chicken Mandi with aromatic rice and condiments.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Chicken Mandi Platter<span class="serves">4 PERSON</span></span><span class="dots"></span><span class="pr">Rs 2,999</span></div><p class="ds">The full family-size chicken Mandi with traditional sides.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Mutton Mandi Platter<span class="serves">2 PERSON</span></span><span class="dots"></span><span class="pr">Rs 2,399</span></div><p class="ds">Premium mutton Mandi, slow-roasted, with fragrant rice.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Mutton Mandi Platter<span class="serves">4 PERSON</span></span><span class="dots"></span><span class="pr">Rs 4,499</span></div><p class="ds">Rich mutton Mandi made for sharing.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">BBQ Platter</span><span class="dots"></span><span class="pr">In deals below</span></div><p class="ds">Kababs and tikka fresh off the grill — the centrepiece of the feast deals.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Karahi (incl. Black Pepper)</span><span class="dots"></span><span class="pr">In deals below</span></div><p class="ds">Rich, wok-tossed karahi served with roti, raita and salad.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Chicken Handi &amp; Achari Handi</span><span class="dots"></span><span class="pr">In deals below</span></div><p class="ds">Creamy handi favourites, paired with roghni naan in the deals.</p></div>
+    <div class="mitem"><div class="row"><span class="nm">Biryani, Fried Rice &amp; Chinese</span><span class="dots"></span><span class="pr">In deals below</span></div><p class="ds">Chicken biryani, egg fried rice, chowmein and Manchurian round out the table.</p></div>
+  </div>
+
+  <div class="sec-head center" id="deals" style="margin-top:48px">
+    <span class="eyebrow">Best Value</span>
+    <h2>Platter deals for every group size</h2>
+    <p>All platter deals include soft drinks &amp; sides.</p>
+  </div>
+  <div class="mgrid">
+    <div class="mitem"><div class="row"><span class="nm">Deal — Rice + Chinese Gravy + Drink<span class="serves">1 PERSON</span></span><span class="dots"></span><span class="pr">Rs 1,000</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Deal — Handi + Naan + Raita + Drink<span class="serves">1 PERSON</span></span><span class="dots"></span><span class="pr">Rs 1,000</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Deal — Shashlik + Alfredo Pasta<span class="serves">2 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 1,900</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Deal — Kabab + Karahi + Roti<span class="serves">2 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 1,900</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Deal — Kabab + Fried Rice + Karahi<span class="serves">4 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 4,000</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Deal — BBQ + Handi + Biryani<span class="serves">4 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 4,000</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Full Feast Deal<span class="serves">6 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 5,950</span></div></div>
+    <div class="mitem"><div class="row"><span class="nm">Grand Arabian Feast<span class="serves">8 PERSONS</span></span><span class="dots"></span><span class="pr">Rs 7,800</span></div></div>
+  </div>
+  <div class="note">Call <a href="tel:+923357221111" style="color:#fff;text-decoration:underline">0335 7221111</a> to book a table or order catering — By Pass Road, Rahim Yar Khan.</div>
+</div></section>
+
+<section id="visit"><div class="wrap visit">
+  <div class="panel">
+    <h3>Visit us</h3>
+    <div class="kv"><span class="k">📍 Address</span><span>Near Attock Petroleum, By Pass Road, Rahim Yar Khan, Punjab 64200, Pakistan</span></div>
+    <div class="kv"><span class="k">📞 Phone</span><a href="tel:+923357221111">+92 335 7221111</a></div>
+    <div class="kv"><span class="k">💬 WhatsApp</span><a href="https://wa.me/923357221111" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+    <div class="kv"><span class="k">⭐ Google</span><span>Rated 4.6 from 28 reviews</span></div>
+    <div class="kv"><span class="k">🍽️ Services</span><span>Dine-in • Delivery • Catering &amp; events</span></div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="tel:+923357221111">📞 Call Now</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Al-Arabia+Restaurant+Rahim+Yar+Khan" target="_blank" rel="noopener">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Colours of this prototype</h3>
+    <p style="color:var(--muted);font-size:14.5px">Copied from the restaurant's <b style="color:var(--black)">own logo</b> — the red dallah (Arabic coffee pot) mark used on its official website and branding. Primary red sampled directly from the logo file; black from the logo/site; cream and sand are neutral backgrounds.</p>
+    <div class="swatches">
+      <span class="sw"><i style="background:#C62027"></i>#C62027<br>Logo Red</span>
+      <span class="sw"><i style="background:#8F141B"></i>#8F141B<br>Deep Red</span>
+      <span class="sw"><i style="background:#181818"></i>#181818<br>Black</span>
+      <span class="sw"><i style="background:#FFF9F3"></i>#FFF9F3<br>Cream</span>
+      <span class="sw"><i style="background:#F3E7D3"></i>#F3E7D3<br>Sand</span>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:14px">The logo at the top of this page is the restaurant's actual logo, shown as it appears in their branding.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+    <img src="data:image/png;base64,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" alt="Al-Arabia logo" style="height:52px;background:#fff;border-radius:10px;padding:5px">
+    <div><h4 style="margin:0">Al-Arabia Restaurant</h4><small style="color:#A99B87">MANDI • BBQ • KARAHI • BUFFET — RAHIM YAR KHAN</small></div>
+  </div>
+  <p style="margin-top:14px;max-width:38rem">Family dining, Mandi platters and catering on By Pass Road, Rahim Yar Khan. Call <a href="tel:+923357221111">0335 7221111</a> for bookings and events.</p>
+  <div class="fine">Sample website prototype made for demonstration — not the official website of this business. Menu items and prices are from the restaurant's published menu, checked 26 October 2026.</div>
+</div></footer>
+
+<a class="float-wa" href="https://wa.me/923357221111" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</body>
+</html>
